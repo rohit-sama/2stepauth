@@ -7,7 +7,7 @@ export async function Header() {
   const session = await getServerSession(authOptions);
   console.log(session);
   return (
-    <div className="flex justify-evenly border-b-gray-500 border-b-2 pb-4 gap-80 my-5">
+    <div className="flex justify-evenly border-b-amber-600 border-b-2 pb-4 gap-80 my-5">
       <div className="flex">
         {" "}
         <Image

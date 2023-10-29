@@ -15,7 +15,7 @@
 }
 
 .root {
-  @apply bg-[rgb(4,5,9)];
+  @apply bg-[rgb(3,3,6)];
 }
 
 .black_btn {
