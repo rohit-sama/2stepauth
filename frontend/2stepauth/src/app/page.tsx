@@ -1,11 +1,11 @@
-import Header, { signinwithgoogle } from "@/components/header";
+import Header from "@/components/header";
+import { signinwithgoogle } from "@/components/signin";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from 'next-auth';
 import Link from "next/link";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
-console.log(session)
   return (
     <div className="">
       <Header />

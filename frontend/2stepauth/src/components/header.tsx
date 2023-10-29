@@ -1,19 +1,11 @@
-"use client";
-import { signIn } from "next-auth/react";
 import Image from "next/image";
+import { signinwithgoogle, signoutwithgoogle } from "./signin";
 import { authOptions } from "@/lib/auth";
-import { getServerSession } from 'next-auth';
+import { getServerSession } from "next-auth";
 
-export const signinwithgoogle = () => {
-  try {
-    signIn("google", { callbackUrl: "http://localhost:3000/" });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const Header =async() => {
-    const session = await getServerSession(authOptions);
+export async function Header() {
+  const session = await getServerSession(authOptions);
+  console.log(session);
   return (
     <div className="flex justify-evenly border-b-gray-500 border-b-2 pb-4 gap-80 my-5">
       <div className="flex">
@@ -27,12 +19,17 @@ const Header =async() => {
         />
         <h1 className="text-3xl text-gray-400">/2Auth</h1>
       </div>
-
-      <button className="black_btn" onClick={signinwithgoogle}>
-        Sign In With Google
-      </button>
+      {!session ? (
+        <button className="black_btn" onClick={signinwithgoogle}>
+          Sign In With Google
+        </button>
+      ) : (
+        <button className="black_btn" onClick={signoutwithgoogle}>
+          Sign Out
+        </button>
+      )}
     </div>
   );
-};
+}
 
 export default Header;
