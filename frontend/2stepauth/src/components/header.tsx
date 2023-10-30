@@ -24,9 +24,12 @@ export async function Header() {
           Sign In With Google
         </button>
       ) : (
+        <div className="flex justify-center gap-3 items-center">
         <button className="black_btn" onClick={signoutwithgoogle}>
           Sign Out
         </button>
+        <h1 className="text-gray-400">@{(session.user.name)?.split(" ")[0]}</h1>
+        </div>
       )}
     </div>
   );
