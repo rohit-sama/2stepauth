@@ -19,7 +19,7 @@ export default async function Home() {
           Web Application
         </h2>
         <div className="text-gray-500 text-lg text-center flex justify-center items-center m-5" >
-        <p className="text-gray-500">Experience the next level of protection for your web application, with an added layer of security that goes beyond passwords – Two-step Authentication, a must-have for today's digital world.</p>
+        <p className="text-gray-500">Experience the next level of protection for your web application, with an added layer of security that goes beyond passwords – Two-step Authentication, a must-have for today{"'"}s digital world.</p>
         </div>
        
         <div className="text-center mt-20 flex justify-center items-center">
