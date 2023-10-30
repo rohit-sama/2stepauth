@@ -10,7 +10,6 @@ function generateOTP() {
 
 export async function GET(req: Request, res: Response) {
   try {
-
     const session = await getServerSession(authOptions);
     if (!session) {
       return new Response("Unauthorized", { status: 401 });

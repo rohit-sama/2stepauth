@@ -7,7 +7,7 @@ export default withAuth(
         const pathname = req.nextUrl.pathname;
         const isauth = await getToken({ req });
 
-        const sensetive = ["/dashboard"];
+        const sensetive = ["/dashboard", "/profile"];
         const isacces = sensetive.some((path) => pathname.startsWith(path));
 
         if (!isauth && isacces) {

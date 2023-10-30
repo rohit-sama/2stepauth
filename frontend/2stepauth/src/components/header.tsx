@@ -6,7 +6,6 @@ import Link from "next/link";
 
 export async function Header() {
   const session = await getServerSession(authOptions);
-  console.log(session);
   return (
     <div className="flex justify-evenly border-b-amber-600 border-b-2 pb-4 gap-80 my-5">
       <Link href="/" className="flex">
@@ -28,7 +27,7 @@ export async function Header() {
         <button className="black_btn" onClick={signoutwithgoogle}>
           Sign Out
         </button>
-        <h1 className="text-gray-400">@{(session.user.name)?.split(" ")[0]}</h1>
+        <Link href="/profile" className="text-gray-400">@{(session.user.name)?.split(" ")[0]}</Link>
         </div>
       )}
     </div>

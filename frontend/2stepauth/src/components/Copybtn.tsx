@@ -16,7 +16,7 @@ const Copybtn = () => {
         if (response.status === 200) {
           const receivedOtp = response.data;
           setOtp(receivedOtp.otp);
-          console.log(receivedOtp);
+          
         }
         
         } else {

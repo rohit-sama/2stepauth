@@ -1,7 +1,6 @@
 "use client"
 import { signIn, signOut } from "next-auth/react";
 
-
 export const signinwithgoogle = () => {
   try {
     signIn("google", { callbackUrl: "http://localhost:3000/" });
