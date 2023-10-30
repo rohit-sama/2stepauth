@@ -18,10 +18,18 @@ export async function GET(req: Request, res: Response) {
 
 
     const generatedOTP = generateOTP();
-    db.sadd(`user:${session.user.id}:otp`, generatedOTP);
+    db.sadd(`user:${session.user.id}:${generatedOTP}`, generatedOTP);
+    const responseObj = {
+        message: "otp saved",
+        otp: generatedOTP, 
+      };
+      db.expire(`user:${session.user.id}:${generatedOTP}`, 180);
+      
+      const responseBody = JSON.stringify(responseObj);
 
+      
     
-    return new Response("otp saved", { status: 200 });
+      return new Response(responseBody, { status: 200, headers: { 'Content-Type': 'application/json' } });
   } catch (error) {
     return new Response("otp was not saved", { status: 500 });
   }
