@@ -28,7 +28,7 @@ const Dashboard = async ({ params }: PageProps) => {
         <h1 className="text-left text-4xl gray_gradient w-[50%]">Hey {user?.name}</h1>
         <div className="flex items-center gap-4 justify-center">
           <h1>Enter your One Time Password:</h1>
-         <UseOtpForm username  = {user?.id}/>
+         <UseOtpForm username  = {user}/>
         </div>
       </div>
     </div>

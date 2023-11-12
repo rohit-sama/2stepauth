@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import axios,  { AxiosError } from 'axios';
 interface Props {
-    username: string;
+    username: User;
 }
 
 const UseOtpForm = ({username}:Props) => {
