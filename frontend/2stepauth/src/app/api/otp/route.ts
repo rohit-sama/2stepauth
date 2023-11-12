@@ -44,10 +44,10 @@ export async function POST(req: Request, res: Response) {
       return new Response(JSON.stringify(errorResponse), { status: 400, headers: { 'Content-Type': 'application/json' } });
     }
 
-    const key = `user:${username}:${otpValue}`;
+    const key = `user:${username.id}:${otpValue}`;
     const otpExists = await db.sismember(key, otpValue);
 
-    console.log("hello");
+    console.log("Server call");
     if (!otpExists) {
       const errorResponse = {
         error: true,
@@ -59,6 +59,7 @@ export async function POST(req: Request, res: Response) {
     const successResponse = {
       message: "otp verified",
     };
+    db.sadd(`user:${username.email}:session`, true);
     return new Response(JSON.stringify(successResponse), { status: 200, headers: { 'Content-Type': 'application/json' } });
 
   } catch (error) {
