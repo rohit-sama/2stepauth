@@ -1,10 +1,10 @@
 import { db } from "@/lib/db";
 
-export async function GET(req: Request, res: Response) {
+export async function POST(req: Request, res: Response) {
     try {
         const {apikey, email} = await req.json();
         const key = `user:${apikey}:dev`;
-        const devExists = await db.sismember(key, {});
+        const devExists = await db.sismember(key, apikey);
 
         if (!devExists) {
             const errorResponse = {
