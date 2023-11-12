@@ -1,16 +1,28 @@
 import { db } from "@/lib/db";
-import { useRouter } from "next/router";
 
-export async function GET(req: Request, res: Response) {
+export async function POST(req: Request, res: Response) {
     try {
-        // Parse the JSON body of the request
-        const { apikey, email } = await req.json();
+        // Get the request body as text
+        const requestBody = await req.text();
+        console.log("Received JSON:", requestBody);
+        if (!requestBody.trim()) {
+            const errorResponse = {
+                error: true,
+                message: "Empty request body",
+            };
+            return new Response(JSON.stringify(errorResponse), { status: 400, headers: { 'Content-Type': 'application/json' } });
+        }
         
+
+        // Parse the JSON body of the request
+        const { apikey, email } = JSON.parse(requestBody);
+
         // Construct the key for the Redis set
         const key = `user:${apikey}:dev`;
 
         // Check if the key exists in the Redis set
-        const devExists = await db.sismember(key, {});
+        const devExists = await db.sismember(key, apikey);
+        console.log(devExists)
         if (!devExists) {
             const errorResponse = {
                 error: true,
@@ -20,7 +32,7 @@ export async function GET(req: Request, res: Response) {
         }
 
         // Construct the key for the email lookup in Redis
-        const emailKey = `user:${apikey}:dev:email`;
+        const emailKey = `user:${email}:dev`;
 
         // Check if the email exists in the Redis set
         const emailExists = await db.sismember(emailKey, email);
@@ -32,18 +44,20 @@ export async function GET(req: Request, res: Response) {
             };
             return new Response(JSON.stringify(errorResponse), { status: 404, headers: { 'Content-Type': 'application/json' } });
         }
+console.log("Server call --email");
+        
 
-        // If the email exists, retrieve the user ID associated with the email
-        const userId = await db.hget(emailKey, email);
+const redirectUrl = `http://localhost:3000/authenticate/${apikey}`;
+console.log(redirectUrl);
+// Set the Location header for redirection
+const headers = { 'Location': redirectUrl };
 
-        const router = useRouter();
-        router.push(`/${userId}`);
-
-
-        return new Response("ok", { status: 200, headers: { 'Content-Type': 'application/json' } });
+// Return a response with the Location header
+return new Response(null, { status: 302, headers });
     } catch (error) {
-        // Handle any errors that may occur during the execution
-        console.error(error);
+        // Log the error for debugging
+        console.error("Error:", error);
+
         const errorResponse = {
             error: true,
             message: "Internal server error",

@@ -22,6 +22,7 @@ export async function GET(req: Request, res: Response) {
         otp: generatedOTP, 
       };
       db.expire(`user:${session.user.id}:${generatedOTP}`, 180);
+       db.sadd(`user:${session.user.email}:dev`, session.user.email);
       
       const responseBody = JSON.stringify(responseObj);
 

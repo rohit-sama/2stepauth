@@ -22,8 +22,8 @@ const page = async() => {
         <div>
             <h1 className="text-gray-100 mt-10">Your Api Key</h1>
            <Clipboard id={session.user.id}/>
-
         </div>
+
         </div>
        
     </div>

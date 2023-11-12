@@ -16,13 +16,8 @@ const Copybtn = () => {
         if (response.status === 200) {
           const receivedOtp = response.data;
           setOtp(receivedOtp.otp);
-          
         }
-        
-        } else {
-          console.error('Failed to send email and receive OTP');
-        }
-       
+        } 
       })
       .catch((error) => {
         console.error('An error occurred:', error);
