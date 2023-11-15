@@ -26,16 +26,16 @@ export default async function Home() {
        
         <div className="text-center mt-20 flex justify-center items-center">
           {session ? ( <Link href="/dashboard" 
-           className=" text-white m-5 rounded-lg gray_gradient border-2 px-3 border-gray-400 py-1 hover:cursor-pointer hover:border-gray-400 hover:text-gray-100">
+           className=" text-white m-5 rounded-lg grayr_gradient border-2 px-3 border-gray-400 py-1 hover:cursor-pointer hover:border-gray-400 hover:text-gray-100">
             Get Started
           </Link>):(<button onClick={signinwithgoogle}
-           className=" text-white m-5 rounded-lg gray_gradient border-2 px-3 border-gray-400 py-1 hover:cursor-pointer hover:border-gray-400 hover:text-gray-100">
+           className=" text-white m-5 rounded-lg grayr_gradient border-2 px-3 border-gray-400 py-1 hover:cursor-pointer hover:border-gray-400 hover:text-gray-100">
             Get Started
           </button>)}
       
-          <button className=" text-white m-5 rounded-lg gray_gradient border-2 px-3 border-gray-600 py-1 hover:cursor-pointer hover:border-gray-400 hover:text-gray-100">
+          <Link href="/docs"  className=" text-white m-5 rounded-lg gray_gradient border-2 px-3 border-gray-400 py-1 hover:cursor-pointer hover:border-gray-400 hover:text-gray-100">
             Documentation
-          </button>
+          </Link >
         </div>
         
         </div>
