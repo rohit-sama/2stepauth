@@ -2,7 +2,8 @@ import Header from "@/components/header";
 import LandingPage from "@/components/landingpage";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
-import Docs from "@/components/Docs";
+import Docs from "@/components/Intro";
+import Outro from "@/components/outro";
 
 
 export default async function Home() {
@@ -13,9 +14,10 @@ export default async function Home() {
       <Header />
       <LandingPage session = {session}/>   
     </div>
-    {/* <div className="-mt-40">
+    <div className="mt-20">
     <Docs />
-    </div> */}
+    <Outro />
+    </div>
     </div>
   );
 }
