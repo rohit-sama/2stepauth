@@ -9,9 +9,9 @@ export async function Header() {
   const session = await getServerSession(authOptions);
  
   return (
-    <div className="grid max-md:grid-cols-4 ">
-    <div className="flex col-span-3 justify-evenly border-b-amber-600 xl:mx-40 border-b-2 pb-4 md:gap-80 gap-40 my-5">
-      <div className="flex gap-8 justify-center items-center">
+    <div className="grid max-md:grid-cols-4  backdrop-blur-sm">
+    <div className="flex col-span-3 justify-evenly border-b-amber-600  border-b-2 pb-4 md:gap-80 gap-40 my-5">
+      <div className="flex gap-8 justify-start items-center">
       <Link href="/" className="flex">
         <Image
           className="rounded-full "
@@ -20,9 +20,9 @@ export async function Header() {
           width={70}
           height={70}
         />
-        <h1 className="text-3xl text-gray-400">/2Auth</h1>
+        <h1 className="text-3xl orange_gradient">/2Auth</h1>
       </Link>
-      <div className="text-gray-500 lg:flex px-4 border-gray-200 hidden gap-4">
+      <div className="text-gray-300 lg:flex px-4 border-gray-200 hidden gap-4">
           <Link href="/">./Home</Link>
           <Link href="/dashboard">./dashboard</Link>
           <Link href="/docs">./documentation</Link>

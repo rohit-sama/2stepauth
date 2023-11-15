@@ -6,7 +6,7 @@ import { getServerSession } from "next-auth";
 const Dashboard = async () => {
   const session = await getServerSession(authOptions);
   return (
-    <div>
+    <div className="h-[100vh]">
       <Header />
       <div className="flex gap-3 flex-col justify-center items-center h-[70vh] text-gray-100">
         <h1 className="text-left text-4xl gray_gradient w-[50%]">

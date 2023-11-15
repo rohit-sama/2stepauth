@@ -11,7 +11,7 @@ const page = async() => {
     const session = await getServerSession(authOptions);
     if(!session?.user.image) return (<div>loading...</div>)
   return (
-    <div>
+    <div className='h-[100vh]'>
         <Header />
         <div className='md:m-40 mt-10 gap-5 flex flex-col text-center justify-center items-center'>
         <Image alt='profilepic' src={session?.user.image} width={150} height={150} className='rounded-full' />

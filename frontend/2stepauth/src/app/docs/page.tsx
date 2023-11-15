@@ -1,13 +1,14 @@
 import Header from '@/components/header'
 import React from 'react'
+import Docs from '@/components/Docs'
 
-const page = () => {
+const Page = () => {
   return (
-    <div>
+    <div className='h-[100vh]'>
         <Header />
-        <h1 className='text-gray-200 lg:text-4xl md:text-3xl text-2xl m-10 flex justify-center items center'>Documentation</h1>
+        <Docs />
         </div>
   )
 }
 
-export default page
+export default Page
