@@ -13,7 +13,7 @@ const page = async() => {
   return (
     <div>
         <Header />
-        <div className='m-40 gap-5 flex flex-col text-center justify-center items-center'>
+        <div className='md:m-40 mt-10 gap-5 flex flex-col text-center justify-center items-center'>
         <Image alt='profilepic' src={session?.user.image} width={150} height={150} className='rounded-full' />
         <div>
         <div className="text-gray-100 text-3xl orange2_gradient">{session?.user.name}</div>
