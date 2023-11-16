@@ -28,7 +28,7 @@ const Docs = () => {
             parameters required, expected responses, and best practices for
             smooth integration. We aim to empower developers in implementing an
             effective and reliable authentication layer for their applications
-            with ease. Let's get started!
+            with ease. Let{"'"}s get started!
           </p>
         </div>
       </div>
@@ -38,7 +38,7 @@ const Docs = () => {
             Purpose and Motivation
           </h1>
           <p className="font-serif text-lg text-gray-400 ">
-            Security is a paramount concern in today's digital landscape,
+            Security is a paramount concern in today{"'"}s digital landscape,
             especially concerning user data and account access. The Two-Step
             Authentication Service was developed with the primary goal of
             bolstering security measures for user accounts. By implementing a
