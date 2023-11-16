@@ -1,23 +1,26 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: '2Auth',
-  description: 'Added layer of security that goes beyond passwords',
-}
+  title: "2Auth",
+  description: "Added layer of security that goes beyond passwords",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html className='root' lang="en">
+    <html className="root" lang="en">
       <body className={inter.className}>
-        <div className="bg-[url(/background.png)] bg-no-repeat">{children}</div></body>
+        <div className="bg-[url(/background.png)] bg-no-repeat">{children}</div>
+        <Footer />
+      </body>
     </html>
-  )
+  );
 }

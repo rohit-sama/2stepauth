@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react';
-import axios,  { AxiosError } from 'axios';
+import axios from 'axios';
 interface Props {
     username: User;
 }
