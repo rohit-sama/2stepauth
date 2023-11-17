@@ -30,7 +30,7 @@ const Documentation = () => {
             <p>
               <strong>Endpoint:</strong> POST{" "}
               <span className="bg-gray-400 text-sm text-black font-semibold rounded-md p-1">
-                https://2stepauth.vercel.app/api/otp/authenticateotp
+                hhttps://api-2stepauth.vercel.app/api/otp/authenticateotp
               </span>
             </p>
             <p>
@@ -56,7 +56,7 @@ const Documentation = () => {
             <p>
               <strong>Endpoint:</strong> POST{" "}
               <span className="bg-gray-400 text-black font-semibold rounded-md p-1">
-                https://2stepauth.vercel.app/api/otp/getsession
+              https://api-2stepauth.vercel.app/api/otp/getsession
               </span>
             </p>
             <p>
@@ -96,7 +96,7 @@ const Documentation = () => {
             <p>
               <strong>Endpoint:</strong> POST{" "}
               <span className="bg-gray-400 text-black font-semibold rounded-md p-1">
-                https://2stepauth.vercel.app/api/otp/signout{" "}
+              https://api-2stepauth.vercel.app/api/otp/signout{" "}
               </span>
             </p>
             <p>
