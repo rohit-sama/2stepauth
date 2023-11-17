@@ -11,7 +11,7 @@ export default function Home() {
     try {
       console.log("Initiating Session");
       const response = await axios.post(
-        "http://localhost:4000/api/otp/authenticateotp",
+        "https://api-2stepauth.vercel.app/api/otp/authenticateotp",
         {
           apikey: apiKey,
           email: email,
@@ -44,7 +44,7 @@ export default function Home() {
     try {
       console.log("Initiating Session");
       const response = await axios.post(
-        "http://localhost:4000/api/otp/getsession",
+        "https://api-2stepauth.vercel.app/api/otp/getsession",
         {
           apikey: apiKey,
           email: email,
@@ -70,7 +70,7 @@ export default function Home() {
     try {
       console.log("signing out");
       const response = await axios.post(
-        "http://localhost:4000/api/otp/signout",
+        "https://api-2stepauth.vercel.app/api/otp/signout",
         {
           apikey: apiKey,
           email: email,
