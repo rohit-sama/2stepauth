@@ -8,7 +8,7 @@ export async function POST(req: Request, res: Response) {
         if (!session) {
             return new Response("Unauthorized", { status: 401 });
         }
-        db.sadd(`user:${session.user.id}:dev`, session.user.id);
+        db.set(`user:${session.user.id}:dev`, session.user.id);
         console.log("Server call");
         return new Response(`${session.user.id}:dev`, { status: 200, headers: { 'Content-Type': 'application/json' } });
     } catch (error) {

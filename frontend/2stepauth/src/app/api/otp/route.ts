@@ -14,15 +14,15 @@ export async function GET(req: Request, res: Response) {
     if (!session) {
       return new Response("Unauthorized", { status: 401 });
     }
-
+console.log("Server call");
     const generatedOTP = generateOTP();
-    db.sadd(`user:${session.user.id}:${generatedOTP}`, generatedOTP);
+    db.set(`user:${session.user.id}:${generatedOTP}`, generatedOTP);
     const responseObj = {
         message: "otp saved",
         otp: generatedOTP, 
       };
       db.expire(`user:${session.user.id}:${generatedOTP}`, 180);
-       db.sadd(`user:${session.user.email}:dev`, session.user.email);
+       db.set(`user:${session.user.email}:dev`, session.user.email);
       
       const responseBody = JSON.stringify(responseObj);
 
@@ -46,7 +46,7 @@ export async function POST(req: Request, res: Response) {
     }
 
     const key = `user:${username.id}:${otpValue}`;
-    const otpExists = await db.sismember(key, otpValue);
+    const otpExists = await db.get(key);
 
     console.log("Server call");
     if (!otpExists) {
@@ -60,7 +60,7 @@ export async function POST(req: Request, res: Response) {
     const successResponse = {
       message: "otp verified",
     };
-    db.sadd(`user:${username.email}:session`, true);
+    db.set(`user:${username.email}:session:true`, true);
     return new Response(JSON.stringify(successResponse), { status: 200, headers: { 'Content-Type': 'application/json' } });
 
   } catch (error) {

@@ -47,7 +47,7 @@ export async function POST(req: Request, res: Response) {
 console.log("Server call --email");
         
 
-const redirectUrl = `http://localhost:3000/authenticate/${apikey}`;
+const redirectUrl = `/authenticate/${apikey}`;
 console.log(redirectUrl);
 // Set the Location header for redirection
 const headers = { 'Location': redirectUrl };
