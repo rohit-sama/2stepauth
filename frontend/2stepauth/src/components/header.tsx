@@ -12,9 +12,9 @@ export async function Header() {
     <div className="grid max-md:grid-cols-4  backdrop-blur-sm">
     <div className="flex col-span-3 justify-evenly border-b-amber-600  border-b-2 pb-4 md:gap-80 gap-40 my-5">
       <div className="flex gap-8 justify-start items-center">
-      <Link href="/" className="flex">
+      <Link href="/" className="flex md:ml-0 -ml-20">
         <Image
-          className="rounded-full "
+          className="rounded-full md:flex  hidden"
           src="/logo.png"
           alt="Picture of the author"
           width={70}
