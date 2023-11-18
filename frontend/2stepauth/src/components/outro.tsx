@@ -67,7 +67,7 @@ const Outro = () => {
               complex scenarios effectively. Comprehensive documentation
               outlining potential errors, troubleshooting steps, and best
               practices serves as a comprehensive guide, enabling efficient
-              problem-solving and ensuring the application's robustness and
+              problem-solving and ensuring the application{"'"}s robustness and
               reliability.
             </div>
           </div>
