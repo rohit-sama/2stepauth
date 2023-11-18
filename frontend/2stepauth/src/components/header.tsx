@@ -14,7 +14,7 @@ export async function Header() {
       <div className="flex gap-8 justify-start items-center">
       <Link href="/" className="flex md:ml-0 -ml-20">
         <Image
-          className="rounded-full md:flex  hidden"
+          className="rounded-full   hidden"
           src="/logo.png"
           alt="Picture of the author"
           width={70}
