@@ -16,7 +16,7 @@ const Youtube = () => {
         <div className="box glowing  p-[0.4px]">
         <iframe
       className="md:h-[60vh]  shadow-lg md:w-[100vh] w-[45vh] h-[30vh]"
-        src="https://www.youtube.com/embed/rA5eZl7LhF0?si=Y_MEfld-654Dg8QB"
+        src="https://www.youtube.com/embed/Qn676E1TLSs?si=1ikWQBMPl9pHOnJr"
         title="tutorial"
         allow=" clipboard-write; encrypted-media; gyroscope; web-share"
 
