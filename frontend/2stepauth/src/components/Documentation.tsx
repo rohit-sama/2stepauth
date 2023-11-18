@@ -30,7 +30,7 @@ const Documentation = () => {
             <p>
               <strong>Endpoint:</strong> POST{" "}
               <span className="bg-gray-400 text-sm text-black font-semibold rounded-md p-1">
-                hhttps://api-2stepauth.vercel.app/api/otp/authenticateotp
+                https://api-2stepauth.vercel.app/api/otp/authenticateotp
               </span>
             </p>
             <p>

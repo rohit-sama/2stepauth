@@ -4,6 +4,7 @@ import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import Docs from "@/components/Intro";
 import Outro from "@/components/outro";
+import Youtube from "@/components/youtube";
 
 
 export default async function Home() {
@@ -16,6 +17,7 @@ export default async function Home() {
     </div>
     <div className="mt-20">
     <Docs />
+    <Youtube />
     <Outro />
     </div>
     </div>

@@ -10,15 +10,15 @@ const Docs = () => {
         whileInView={{ y: 0, opacity: 1 }}
         initial={{ y: 100, opacity: 0 }}
         transition={{
-          duration: 0.5,
+          duration: 0.4,
           delay: 0.1,
         }}
       >
         <div className="flex lg:flex-row flex-col-reverse items-center m-5 mb-20 gap-20">
           <Image
-            className="shadow-lg border-2 border-purple-400 shadow-purple-400 "
+            className="shadow-md border-2 border-blue-400 shadow-blue-400 "
             alt="about"
-            width={500}
+            width={400}
             height={400}
             src="/intro.jpg"
           />
@@ -48,13 +48,13 @@ const Docs = () => {
         whileInView={{ y: 0, opacity: 1 }}
         initial={{ y: 100, opacity: 0 }}
         transition={{
-          duration: 0.5,
+          duration: 1,
           delay: 0,
         }}
       >
         <div className="flex lg:flex-row flex-col justify-end  items-center m-5 mb-40 gap-20">
           <div className="flex-col text-right md:ml-10 md:mr-10">
-            <h1 className="font-semibold blue_gradient lg:text-6xl text-4xl mb-3">
+            <h1 className="font-semibold orange_gradient lg:text-6xl text-4xl mb-3">
               Purpose and Motivation
             </h1>
             <p className="font-serif text-lg lg:ml-40 text-gray-400 ">
@@ -67,9 +67,9 @@ const Docs = () => {
             </p>
           </div>
           <Image
-            className=" shadow-lg border-2 border-blue-400 shadow-blue-400"
+            className=" shadow-lg border-2 border-orange-400 shadow-orange-400"
             alt="about"
-            width={500}
+            width={400}
             height={400}
             src="/purpose.jpg"
           />
